@@ -47,9 +47,17 @@ const ControlPanel = ({
           disabled={isPlaying}
         >
           <option value="bubbleSort">Bubble Sort</option>
+          <option value="selectionSort">Selection Sort</option>
+          <option value="insertionSort">Insertion Sort</option>
           <option value="quickSort">Quick Sort</option>
           <option value="mergeSort">Merge Sort</option>
           <option value="heapSort">Heap Sort</option>
+          <option value="shellSort">Shell Sort</option>
+          <option value="countingSort">Counting Sort</option>
+          <option value="radixSort">Radix Sort</option>
+          <option value="bucketSort">Bucket Sort</option>
+          <option value="timsort">Timsort</option>
+          <option value="introsort">Introsort</option>
         </select>
       </div>
 

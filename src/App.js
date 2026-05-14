@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ControlPanel from './ControlPanel';
 import Visualizer from './Visualizer';
 import CodeSidecar from './CodeSidecar';
+import AlgorithmDescription from './AlgorithmDescription';
 import { SortingVisualizer } from './algorithms';
 import { AnimationController } from './AnimationController';
 import './App.css';
@@ -187,19 +188,24 @@ const App = () => {
 
       {/* Main Content Area */}
       <div className="main-content">
-        {/* Visualizer */}
-        <Visualizer
-          array={currentVisualizationData.array}
-          indices={currentVisualizationData.indices}
-          comparingIndices={currentVisualizationData.comparingIndices}
-          sortedIndices={currentVisualizationData.sortedIndices}
-        />
+        <div className="visualizer-layout">
+          {/* Visualizer */}
+          <Visualizer
+            array={currentVisualizationData.array}
+            indices={currentVisualizationData.indices}
+            comparingIndices={currentVisualizationData.comparingIndices}
+            sortedIndices={currentVisualizationData.sortedIndices}
+          />
 
-        {/* Code Sidecar - Bottom on mobile, Right on desktop */}
-        <CodeSidecar
-          algorithm={algorithm}
-          currentLine={currentVisualizationData.pseudocodeLine}
-        />
+          {/* Code Sidecar - Bottom on mobile, Right on desktop */}
+          <CodeSidecar
+            algorithm={algorithm}
+            currentLine={currentVisualizationData.pseudocodeLine}
+          />
+        </div>
+
+        {/* Algorithm Description */}
+        <AlgorithmDescription algorithm={algorithm} />
       </div>
     </div>
   );
